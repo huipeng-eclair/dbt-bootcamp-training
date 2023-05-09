@@ -7,6 +7,13 @@ sources:
     tables:
       - name: customer
       - name: orders
+        columns:
+          - name: orderid
+          # test in the source database
+          # command: dbt test -s source:globalmar
+            tests:
+              - unique
+              - not_null
       - name: product
         # columns:
         #   freshness:
